@@ -8,24 +8,18 @@ public class DecoderTest {
 
     @Test
     void testDecodeVowelSubstitution() {
-        assertEquals("t2st3ng", DecoderTest.decodeVowelSubstitution("testing"));
+        assertEquals("t2st3ng", Decoder.decodeVowelSubstitution("testing"));
     }
 
 
-    private static Object decodeVowelSubstitution(String string) {
-        return null;
-    }
-
+    
 
     @Test
     void testDecodeConsonantSubstitution() {
-        assertEquals("uftujoh", DecoderTest.decodeConsonantSubstitution("testing"));
+        assertEquals("vftvjph", Decoder.decodeConsonantSubstitution("testing"));
     }
 
 
-    private static Object decodeConsonantSubstitution(String string) {
-        return null;
-    }
 
 
 }
