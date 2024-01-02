@@ -1,24 +1,24 @@
-1. # testAddProductToCart:
+# 1.  testAddProductToCart:
 
 Цей тест перевіряє, чи метод addProduct класу Cart додає продукт до кошика, а розмір списку продуктів у кошику збільшується на 1.
 
 
-2. # testRemoveProductFromCart:
+# 2. testRemoveProductFromCart:
 
 Цей тест перевіряє, чи метод removeFromCart класу Cart правильно видаляє продукт з кошика, а розмір списку продуктів у кошику зменшується на 1.
 
 
-3. # testPlaceOrder:
+# 3. testPlaceOrder:
 
 Цей тест використовує мокований об'єкт Cart для перевірки, чи метод placeOrder класу Order правильно створює замовлення з продуктами з кошика та встановлює статус замовлення в CREATED.
 
 
-4. # testUpdateOrderStatus:
+# 4. testUpdateOrderStatus:
 
 Цей тест перевіряє, чи метод updateOrderStatus класу Order правильно оновлює статус замовлення на вказаний статус.
 
 
-5. # testGetOrderStatus:
+# 5. testGetOrderStatus:
 
 Цей тест використовує мокований об'єкт Order для перевірки, чи метод getOrderStatus класу Order правильно повертає статус замовлення.
 

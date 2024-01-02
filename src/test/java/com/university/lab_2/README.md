@@ -1,28 +1,28 @@
-1. # testAddItem:
+# 1. testAddItem:
 
 Цей тест перевіряє, чи метод addItem класу Library правильно додає різні елементи (книгу та DVD) до бібліотеки та перевіряє, чи кількість доступних елементів відповідає очікуваній.
 
 
-2. # testRemoveItem:
+# 2.  testRemoveItem:
 
 Цей тест переконується, що метод removeItem класу Library правильно видаляє елементи (книгу та DVD) з бібліотеки та перевіряє, чи кількість доступних елементів стає нуль після видалення.
 
 
-3. # testRegisterPatron:
+# 3.  testRegisterPatron:
 
  Цей тест перевіряє, чи метод registerPatron класу Library правильно реєструє читача та перевіряє, чи читач присутній у списку зареєстрованих читачів.
 
 
-4. # testLendAndReturnItem:
+# 4.  testLendAndReturnItem:
 
 Цей тест переконується, що методи lendItem та returnItem класу Library правильно виконують видачу та повернення елементів, оновлюючи список позичених елементів у читача та статус позичення елемента відповідно.
 
 
-5. # testListAvailableItems:
+# 5.  testListAvailableItems:
 
  Цей тест перевіряє, чи метод listAvailable класу Library правильно повертає кількість доступних елементів у бібліотеці.
 
 
-6. # testListBorrowedItems:
+# 6.  testListBorrowedItems:
 
  Цей тест переконується, що метод listBorrowedItems класу Library правильно повертає кількість елементів, позичених читачем.
