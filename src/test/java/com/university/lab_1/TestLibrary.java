@@ -1,7 +1,6 @@
 package com.university.lab_1;
 
-import com.university.lab_1.Book;
-import com.university.lab_1.Library;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 public class TestLibrary {

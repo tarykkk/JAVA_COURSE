@@ -1,10 +1,7 @@
 package com.university.lab_2;
 
 import org.junit.jupiter.api.*;
-import com.university.lab_2.DVD;
-import com.university.lab_2.Book;
-import com.university.lab_2.Library;
-import com.university.lab_2.Patron;
+
 public class TestLibrary {
     private Library library;
     private Book book;
