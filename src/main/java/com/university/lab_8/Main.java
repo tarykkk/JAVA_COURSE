@@ -1,13 +1,11 @@
 package com.university.lab_8;
 
-import com.fasterxml.jackson.databind.JsonDeserializer;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.HttpURLConnection;
+
 
 public class Main {
     public static void main(String[] args) {

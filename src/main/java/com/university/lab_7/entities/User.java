@@ -1,9 +1,10 @@
-package com.university.lab_7.taryk.part1;
+package com.university.lab_7.entities;
 
 
-import com.university.lab_7.taryk.Exceptions.*;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.university.lab_7.exceptions.OutOfStockException;
 
 public class User {
     private Integer id;

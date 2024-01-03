@@ -1,4 +1,4 @@
-package com.university.lab_7.taryk.part1;
+package com.university.lab_7.entities;
 
 import java.util.HashMap;
 import java.util.Map;

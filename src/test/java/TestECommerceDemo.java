@@ -1,11 +1,11 @@
 
-import com.university.lab_7.taryk.Exceptions.*;
+import com.university.lab_7.*;
+import com.university.lab_7.entities.*;
+import com.university.lab_7.exceptions.OutOfStockException;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.university.lab_7.taryk.part1.*;
-import com.university.lab_7.taryk.part2.ECommercePlatform;
 public class TestECommerceDemo {
     private User user1;
     private User user2;

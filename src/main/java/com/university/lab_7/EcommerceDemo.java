@@ -1,7 +1,6 @@
-package com.university.lab_7.taryk;
-import com.university.lab_7.taryk.Exceptions.OutOfStockException;
-import com.university.lab_7.taryk.part1.*;
-import com.university.lab_7.taryk.part2.ECommercePlatform;
+package com.university.lab_7;
+import com.university.lab_7.exceptions.OutOfStockException;
+import com.university.lab_7.entities.*;
 
 
 public class EcommerceDemo {

@@ -1,8 +1,8 @@
-package com.university.lab_7.taryk.part2;
-
-import com.university.lab_7.taryk.part1.*;
+package com.university.lab_7;
 
 import java.util.*;
+
+import com.university.lab_7.entities.*;
 
 public class ECommercePlatform {
     private Map<Integer, User> users;
