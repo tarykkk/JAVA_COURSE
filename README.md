@@ -15,3 +15,8 @@
 ## [Лабораторна робота №6](https://github.com/tarykkk/taryk/blob/main/src/main/java/com/university/lab_6/README.md)
 
 ## [Лабораторна робота №7](https://github.com/tarykkk/taryk/blob/main/src/main/java/com/university/lab_7/README.md)
+
+## [Лабораторна робота №8](https://github.com/tarykkk/taryk/blob/main/src/main/java/com/university/lab_8/README.md)
+
+## [Лабораторна робота №9](https://github.com/tarykkk/taryk/blob/main/src/main/java/com/university/lab_9/README.md)
+
