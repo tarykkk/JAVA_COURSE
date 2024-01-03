@@ -10,13 +10,7 @@ public class TestAccountNotFoundException
     @Test
     void searchNotExisingAccount(){
         bank = new Bank();
-        try {
-            bankAccount = bank.createAccount("Acc1",1000);
-        }
-        catch (NegativeAmountException ex){
-            System.err.println(ex.getMessage());
-        }
-
+       bankAccount = bank.createAccount("Acc1",1000);
         Assertions.assertThrows(AccountNotFoundException.class, () ->bank.findAccount(96438841));
 
     }
@@ -24,24 +18,14 @@ public class TestAccountNotFoundException
     @Test
     void sendMoneyToNotExistingAccount(){
         bank = new Bank();
-        try {
-            bankAccount = bank.createAccount("Acc1",1000);
-        }
-        catch (NegativeAmountException ex){
-            System.err.println(ex.getMessage());
-        }
+        bankAccount = bank.createAccount("Acc1",1000);
         Assertions.assertThrows(AccountNotFoundException.class, () ->bank.transferMoney(bankAccount.getAccountNumber(), 83832252, 100));
     }
 
     @Test
     void sendMoneyFromNotExistingAccount(){
         bank = new Bank();
-        try {
-            bankAccount = bank.createAccount("Acc1",1000);
-        }
-        catch (NegativeAmountException ex){
-            System.err.println(ex.getMessage());
-        }
+        bankAccount = bank.createAccount("Acc1",1000);
         Assertions.assertThrows(AccountNotFoundException.class, () ->bank.transferMoney(83832252, bankAccount.getAccountNumber(), 100));
     }
 
