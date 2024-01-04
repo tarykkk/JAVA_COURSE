@@ -1,5 +1,5 @@
+package com.university.lab_7;
 
-import com.university.lab_7.*;
 import com.university.lab_7.entities.*;
 import com.university.lab_7.exceptions.OutOfStockException;
 
