@@ -10,10 +10,13 @@ public class User {
     private Integer id;
     private String username;
     private Map<Product, Integer> cart;
-    public User (Integer id, String username){
+    private double balance;
+
+    public User (Integer id, String username, double balance){
         this.id = id;
         this.username = username;
         this.cart = new HashMap<>();
+        this.balance = balance;
     }
 
     public Integer getId(){
@@ -24,6 +27,13 @@ public class User {
     }
     public Map<Product, Integer> getCart(){
         return cart;
+    }
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
     public void addToCart(Product product, int quantity) throws OutOfStockException {
         if(quantity <= 0){

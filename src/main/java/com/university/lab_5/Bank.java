@@ -9,24 +9,22 @@ public class Bank {
     private final List<BankAccount> accounts = new ArrayList<>();
 
     public BankAccount createAccount(String accountName, double initialDeposit) {
-        
-
-            BankAccount account = new BankAccount(random.nextInt(10000000, 100000000), accountName, initialDeposit);
-            accounts.add(account);
-            return account;
-      
-
-
+        BankAccount account = new BankAccount(random.nextInt(10000000, 100000000), accountName, initialDeposit);
+        accounts.add(account);
+        return account;
     }
-    public BankAccount findAccount(int accountNumber) throws AccountNotFoundException{
-            BankAccount accountToFind = accounts.stream()
-                    .filter(account -> account.getAccountNumber() == accountNumber)
-                    .findFirst()
-                    .orElseThrow(() -> new AccountNotFoundException("There is no account with this number ->" + accountNumber));
 
-            System.out.println(accountToFind.getAccountSummary());
-            return accountToFind;
-        }
+    public BankAccount findAccount(int accountNumber) throws AccountNotFoundException {
+        BankAccount accountToFind = accounts.stream()
+                .filter(account -> account.getAccountNumber() == accountNumber)
+                .findFirst()
+                .orElseThrow(
+                        () -> new AccountNotFoundException("There is no account with this number ->" + accountNumber));
+
+        System.out.println(accountToFind.getAccountSummary());
+        return accountToFind;
+    }
+
     public void transferMoney(int fromAccountNumber, int toAccountNumber, double amount)
             throws AccountNotFoundException, InsufficientFundsException, NegativeAmountException {
         BankAccount sender = findAccount(fromAccountNumber);

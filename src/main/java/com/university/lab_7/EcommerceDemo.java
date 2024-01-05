@@ -1,17 +1,18 @@
 package com.university.lab_7;
 import com.university.lab_7.exceptions.OutOfStockException;
+import com.university.lab_5.NegativeAmountException;
 import com.university.lab_7.entities.*;
 
 
 public class EcommerceDemo {
-    public static void main(String[] main) throws OutOfStockException {
+        public static void main(String[] main) throws OutOfStockException, NegativeAmountException {
         ECommercePlatform platform = new ECommercePlatform();
-        User user1 = new User(1, "Paul Davies");
-        User user2 = new User(2, "Kat Morgan");
-        User user3 = new User(3, "Victor Blanco");
-        platform.addUser(user1);
-        platform.addUser(user2);
-        platform.addUser(user3);
+        User user1 = platform.addUser(1, "Paul Davies", 1000);
+        User user2 = platform.addUser(2, "Kat Morgan", 1000);
+        User user3 = platform.addUser(3, "Victor Blanco", 1000);
+        // platform.addUser(user1);
+        // platform.addUser(user2);
+        // platform.addUser(user3);
 
         Product product1 = new Product(1, "Headphones", 100.0, 30);
         Product product2 = new Product(2, "Microphone", 55.0, 20);

@@ -2,6 +2,7 @@ package com.university.lab_7;
 
 import java.util.*;
 
+import com.university.lab_5.NegativeAmountException;
 import com.university.lab_7.entities.*;
 
 public class ECommercePlatform {
@@ -25,6 +26,17 @@ public class ECommercePlatform {
     public void addUser(User user){
         users.put(user.getId(), user);
     }
+    public User addUser(int id, String surname, double initialDeposit) throws NegativeAmountException {
+
+        if(initialDeposit < 0) {
+            throw new NegativeAmountException("Cant create account with initial deposit < 0");
+        }
+
+        User user = new User(id, surname, initialDeposit);
+        users.put(user.getId(), user);
+        return user;
+    }
+
     public void addProduct(Product product){
         products.put(product.getId(), product);
     }

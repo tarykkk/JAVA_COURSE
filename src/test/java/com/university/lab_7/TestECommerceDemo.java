@@ -1,5 +1,7 @@
 package com.university.lab_7;
 
+
+import com.university.lab_5.NegativeAmountException;
 import com.university.lab_7.entities.*;
 import com.university.lab_7.exceptions.OutOfStockException;
 
@@ -8,21 +10,18 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 public class TestECommerceDemo {
     private User user1;
-    private User user2;
     private Product product1;
     private Product product2;
     private Product product3;
     ECommercePlatform platform;
     @BeforeEach
-    public void setUp(){
-        user1 = new User(1, "Charlie Evans");
-        user2 = new User(2, "Sara Craig");
+    public void setUp() throws NegativeAmountException {
         product1 = new Product(1, "Laptop", 800.00, 20);
         product2 = new Product(2, "Keyboard", 100.00, 25);
         product3 = new Product(3, "Headphones", 150.00, 15);
         platform = new ECommercePlatform();
-        platform.addUser(user1);
-        platform.addUser(user2);
+        platform.addUser(1, "Charlie Evans", 1000);
+        platform.addUser(2, "Sara Craig", 1000);
         platform.addProduct(product1);
         platform.addProduct(product2);
         platform.addProduct(product3);

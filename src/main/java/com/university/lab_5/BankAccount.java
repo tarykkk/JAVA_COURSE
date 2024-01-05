@@ -1,6 +1,5 @@
 package com.university.lab_5;
 
-
 public class BankAccount {
     private final int accountNumber;
     private final String accountName;
@@ -13,25 +12,23 @@ public class BankAccount {
         this.balance = balance;
     }
 
-    public void deposit(double amount) throws NegativeAmountException{
-        if (amount < 0){
-                throw new NegativeAmountException("Unable to deposit amount that < 0 to a balance!");
-        }
-        else {
+    public void deposit(double amount) throws NegativeAmountException {
+        if (amount < 0) {
+            throw new NegativeAmountException("Unable to deposit amount that < 0 to a balance!");
+        } else {
             this.balance += amount;
             System.out.println("Amount was deposited to account!");
 
         }
     }
 
-    public void withdraw(double amount) throws InsufficientFundsException, NegativeAmountException{
-        if (amount > balance){
-                throw new InsufficientFundsException("You don't have enough balance to make a transaction");
+    public void withdraw(double amount) throws InsufficientFundsException, NegativeAmountException {
+        if (amount > balance) {
+            throw new InsufficientFundsException("You don't have enough balance to make a transaction");
         }
-        if (amount < 0){
+        if (amount < 0) {
             throw new NegativeAmountException("Unable to withdraw amount that < 0 from a balance!");
-        }
-        else {
+        } else {
             this.balance -= amount;
             System.out.println("Amount was withdrawn from account!");
         }
@@ -50,13 +47,7 @@ public class BankAccount {
         return balance;
     }
 
-
-
-
-
-
-
-    public String getAccountSummary(){
+    public String getAccountSummary() {
         return "BankAccount{" +
                 "accountNumber=" + accountNumber +
                 ", accountName='" + accountName + '\'' +
