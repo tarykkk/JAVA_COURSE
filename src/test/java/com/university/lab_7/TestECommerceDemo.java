@@ -34,11 +34,7 @@ public class TestECommerceDemo {
     }
     @Test
     public void testAddToCartInsufficientStock() throws OutOfStockException{
-        try {
-            user1.addToCart(product1, 50);
-        } catch (OutOfStockException e) {
-            Assertions.assertEquals("Not enough stock available", e.getMessage());
-        }
+       user1.addToCart(product1, 50);
     }
     @Test
     public void testRemoveFromCartExistingProduct() throws OutOfStockException {
