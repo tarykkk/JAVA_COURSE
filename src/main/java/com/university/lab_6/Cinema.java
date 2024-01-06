@@ -53,12 +53,45 @@ public class Cinema {
 
     public void printSeatingArrangement(int hallNumber) throws IllegalArgumentException {
         validateHallAndRow(hallNumber, 0);
-        for (int[] row : cinemaHalls[hallNumber]) {
-            for (int seat : row) {
-                System.out.print(seat + " ");
-            }
-            System.out.println();
+
+        System.out.print("     ");
+        for (int i = 1; i <= cinemaHalls[hallNumber][0].length; i++){
+            System.out.print( (i <= 9 ? " " : "") + i + " ");
         }
+        System.out.println();
+
+        int i = 1;
+        for (int[] row : cinemaHalls[hallNumber]) {
+
+            if(i <= 9) {
+                System.out.print(" ");
+            }
+
+            System.out.print(i + " |");
+            System.out.print("\u001B[40m" + "\u001B[32m");
+            System.out.print(" ");
+            for (int seat : row) {
+                if(seat == 0) {
+                    System.out.print(" "+ seat + " ");
+                }
+                else
+                {
+                    System.out.print("\u001B[31m" + "\u001B[43m");
+                    System.out.print(" "+ seat + " ");
+                    System.out.print("\u001B[40m" + "\u001B[32m");
+                }
+            }
+            System.out.print("\u001B[0m");
+            System.out.println("| " + i);
+
+            i++;
+        }
+
+        System.out.print("     ");
+        for (int j = 1; j <= cinemaHalls[hallNumber][0].length; j++){
+            System.out.print( (j <= 9 ? " " : "") + j + " ");
+        }
+        System.out.println();
     }
 
     private void validateHallAndRow(int hallNumber, int row) throws IllegalArgumentException {

@@ -5,6 +5,9 @@ import com.university.lab_5.NegativeAmountException;
 import com.university.lab_7.entities.*;
 import com.university.lab_7.exceptions.OutOfStockException;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -20,25 +23,25 @@ public class TestECommerceDemo {
         product2 = new Product(2, "Keyboard", 100.00, 25);
         product3 = new Product(3, "Headphones", 150.00, 15);
         platform = new ECommercePlatform();
-        platform.addUser(1, "Charlie Evans", 1000);
+        user1 = platform.addUser(1, "Charlie Evans", 1000);
         platform.addUser(2, "Sara Craig", 1000);
         platform.addProduct(product1);
         platform.addProduct(product2);
         platform.addProduct(product3);
     }
     @Test
-    public void testAddToCartSufficientStock() throws OutOfStockException {
-        user1.addToCart(product1, 5);
+    public void testAddToCartSufficientStock() {
+        assertDoesNotThrow( ()->user1.addToCart(product1, 5));
         Assertions.assertEquals(5, user1.getCart().get(product1).intValue());
     }
     @Test
-    public void testAddToCartInsufficientStock() throws OutOfStockException{
-       user1.addToCart(product1, 50);
+    public void testAddToCartInsufficientStock() {
+        assertThrows(OutOfStockException.class, ()->user1.addToCart(product1, 50));   
     }
     @Test
     public void testRemoveFromCartExistingProduct() throws OutOfStockException {
-        user1.addToCart(product1, 4);
-        user1.removeFromCart(product1);
+          assertDoesNotThrow( ()->user1.addToCart(product1, 4));
+          assertDoesNotThrow( ()->user1.removeFromCart(product1));
         Assertions.assertNull(user1.getCart().get(product1));
     }
     @Test
@@ -47,10 +50,9 @@ public class TestECommerceDemo {
         Assertions.assertNull(user1.getCart().get(product1));
     }
     @Test
-    public void testCreateOrder() throws OutOfStockException {
-        user1.addToCart(product1, 7);
-        user1.addToCart(product2, 3);
-
+    public void testCreateOrder() {
+        assertDoesNotThrow( ()->user1.addToCart(product1, 7));
+        assertDoesNotThrow( ()->user1.addToCart(product2, 3));
         int initialStock1 = product1.getStock();
         int initialStock2 = product2.getStock();
 
