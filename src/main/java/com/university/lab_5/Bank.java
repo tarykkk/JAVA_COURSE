@@ -8,7 +8,10 @@ public class Bank {
     private final Random random = new Random();
     private final List<BankAccount> accounts = new ArrayList<>();
 
-    public BankAccount createAccount(String accountName, double initialDeposit) {
+    public BankAccount createAccount(String accountName, double initialDeposit) throws NegativeAmountException {
+        if (initialDeposit < 0) {
+            throw new NegativeAmountException("Can't create an account with a initial deposit < 0");
+        }
         BankAccount account = new BankAccount(random.nextInt(10000000, 100000000), accountName, initialDeposit);
         accounts.add(account);
         return account;
@@ -29,9 +32,11 @@ public class Bank {
             throws AccountNotFoundException, InsufficientFundsException, NegativeAmountException {
         BankAccount sender = findAccount(fromAccountNumber);
         BankAccount receiver = findAccount(toAccountNumber);
+        if(sender.getBalance()<amount) {
+            throw new InsufficientFundsException("balance error");   
+        }
         sender.withdraw(amount);
         receiver.deposit(amount);
-
     }
 
 }

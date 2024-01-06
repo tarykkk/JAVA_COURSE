@@ -11,16 +11,17 @@ public class TestInsufficientFundsException {
 
 
     @Test
-    void InsufficientFundsTransfer(){
-        bank = new Bank();
-       bankAccount1 = bank.createAccount("Test1",1000);
-       bankAccount2 = bank.createAccount("Test2",1000);
-        Assertions.assertThrows(InsufficientFundsException.class, () ->bank.transferMoney(bankAccount1.getAccountNumber(), bankAccount2.getAccountNumber(), 15000));
+    void InsufficientFundsTransfer() throws NegativeAmountException {
+        this.bank = new Bank();
+        this.bankAccount1 = this.bank.createAccount (  "Test1",  1000);
+        this.bankAccount2 = this.bank.createAccount(  "Test2", 1000);
+        Assertions.assertThrows (InsufficientFundsException.class, 
+        ()-> this.bank.transferMoney(this.bankAccount1.getAccountNumber(), this.bankAccount2.getAccountNumber(),1000000000));
     }
     @Test
-    void InsufficientFundsWithdraw(){
-        bank = new Bank();
-        bankAccount1 = bank.createAccount("Acc1",1000);
+    void InsufficientFundsWithdraw() throws NegativeAmountException {
+        this.bank = new Bank();
+        this.bankAccount1 = this.bank.createAccount (  "Test1",  1000);
         Assertions.assertThrows(InsufficientFundsException.class, () ->bankAccount1.withdraw(1100));
     }
 

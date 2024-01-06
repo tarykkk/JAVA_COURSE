@@ -8,7 +8,7 @@ public class TestAccountNotFoundException
     BankAccount bankAccount;
 
     @Test
-    void searchNotExisingAccount(){
+    void searchNotExisingAccount() throws NegativeAmountException {
         bank = new Bank();
        bankAccount = bank.createAccount("Acc1",1000);
         Assertions.assertThrows(AccountNotFoundException.class, () ->bank.findAccount(96438841));
@@ -16,14 +16,14 @@ public class TestAccountNotFoundException
     }
 
     @Test
-    void sendMoneyToNotExistingAccount(){
+    void sendMoneyToNotExistingAccount() throws NegativeAmountException {
         bank = new Bank();
         bankAccount = bank.createAccount("Acc1",1000);
         Assertions.assertThrows(AccountNotFoundException.class, () ->bank.transferMoney(bankAccount.getAccountNumber(), 83832252, 100));
     }
 
     @Test
-    void sendMoneyFromNotExistingAccount(){
+    void sendMoneyFromNotExistingAccount() throws NegativeAmountException {
         bank = new Bank();
         bankAccount = bank.createAccount("Acc1",1000);
         Assertions.assertThrows(AccountNotFoundException.class, () ->bank.transferMoney(83832252, bankAccount.getAccountNumber(), 100));
